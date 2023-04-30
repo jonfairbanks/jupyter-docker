@@ -51,7 +51,7 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/arm
           file: ./Dockerfile
           push: true
-          tags: ${{ github.repository }}:latest"
+          tags: ${{ github.repository }}:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
 
