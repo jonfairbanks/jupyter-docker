@@ -1,14 +1,11 @@
-# jupyter-docker-template
-
-Jupyter in Docker
+# Jupyter in Docker
 
 - Bundled Kernels:
     - Python 3
     - Node.js
     - Golang
 
-
-Start Up:
+### Usage
 ```
 docker run \
   -d \
@@ -20,6 +17,6 @@ docker run \
   -e 'NB_GID'='1000' \
   -e 'GRANT_SUDO'='yes' \
   -p '8888:8888/tcp' \
-  -v '/mnt/user/appdata/Jupyter':'/home/jovyan':'rw' \
+  -v $PWD:'/home/jovyan':'rw' \
   --user root 'jonfairbanks/jupyter-docker' 
 ```
