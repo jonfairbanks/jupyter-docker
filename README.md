@@ -1,5 +1,8 @@
 # Jupyter in Docker
 
+- Included:
+    - Nvidia Drivers
+
 - Bundled Kernels:
     - Python 3
     - Node.js
