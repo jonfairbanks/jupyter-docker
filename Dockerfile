@@ -11,9 +11,12 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Install the Golang kernel and set it up
-RUN go get -u github.com/gopherdata/gophernotes && \
-    mkdir -p /home/$NB_USER/.local/share/jupyter/kernels/gophernotes && \
-    cp $(go env GOPATH)/pkg/mod/github.com/gopherdata/gophernotes@v0.7.3/kernel/* /home/$NB_USER/.local/share/jupyter/kernels/gophernotes/
+RUN go install github.com/gopherdata/gophernotes@v0.7.5 && \
+    mkdir -p ~/.local/share/jupyter/kernels/gophernotes && \
+    cd ~/.local/share/jupyter/kernels/gophernotes && \
+    cp "$(go env GOPATH)"/pkg/mod/github.com/gopherdata/gophernotes@v0.7.5/kernel/*  "." && \
+    chmod +w ./kernel.json && \
+    sed "s|gophernotes|$(go env GOPATH)/bin/gophernotes|" < kernel.json.in > kernel.json
 
 # Install the Node.js kernel and set it up
 RUN npm install -g ijavascript && ijsinstall --install=global
