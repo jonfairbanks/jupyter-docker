@@ -12,7 +12,6 @@ env:
 jobs:
   release:
     name: Publish Docker Image
-    needs: [black-lint, helm-lint]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
