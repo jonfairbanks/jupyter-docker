@@ -23,3 +23,6 @@ docker run \
   -v $PWD:'/home/jovyan':'rw' \
   --user root 'jonfairbanks/jupyter-docker' 
 ```
+
+### Resources
+- [Jupyter Docs](https://docs.jupyter.org/en/latest/)
