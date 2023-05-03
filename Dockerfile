@@ -6,13 +6,14 @@ USER root
 # Update apt-get and install Golang
 RUN apt-get update && \
     apt-get install -yq --no-install-recommends \
+    curl && \
     golang && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Install the Golang kernel and set it up
-RUN go install github.com/gopherdata/gophernotes@v0.7.5 && \
-    mkdir -p ~/.local/share/jupyter/kernels/gophernotes && \
+RUN go install github.com/gopherdata/gophernotes@v0.7.5 
+RUN mkdir -p ~/.local/share/jupyter/kernels/gophernotes && \
     cd ~/.local/share/jupyter/kernels/gophernotes && \
     cp "$(go env GOPATH)"/pkg/mod/github.com/gopherdata/gophernotes@v0.7.5/kernel/*  "." && \
     chmod +w ./kernel.json && \
