@@ -1,5 +1,9 @@
 # Jupyter in Docker
 
+[![Docker Release -- MAIN](https://github.com/jonfairbanks/jupyter-docker/actions/workflows/main.yaml/badge.svg?branch=main)](https://github.com/jonfairbanks/jupyter-docker/actions/workflows/main.yaml)
+![Docker Pulls](https://img.shields.io/docker/pulls/jonfairbanks/jupyter-docker.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/jonfairbanks/jupyter-docker.svg)
+
 - Included:
     - Nvidia Drivers
 
