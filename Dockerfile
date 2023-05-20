@@ -5,7 +5,7 @@ USER root
 
 # Update apt-get and install Golang
 RUN apt-get update && \
-    apt-get install -yq --no-install-recommends \
+    apt-get install -y --no-install-recommends \
     curl && \
     golang && \
     apt-get clean && \
