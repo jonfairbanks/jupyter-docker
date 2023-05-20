@@ -4,10 +4,8 @@ FROM --platform=$BUILDPLATFORM jupyter/tensorflow-notebook:latest
 USER root
 
 # Update apt-get and install Golang
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-    curl && \
-    golang && \
+RUN apt-get update && apt-get install --no-install-recommends \
+    curl golang && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
