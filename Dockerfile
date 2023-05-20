@@ -18,7 +18,7 @@ RUN mkdir -p ~/.local/share/jupyter/kernels/gophernotes && \
     sed "s|gophernotes|$(go env GOPATH)/bin/gophernotes|" < kernel.json.in > kernel.json
 
 # Install the Node.js kernel and set it up
-RUN npm install -g ijavascript && ijsinstall --install=global
+RUN npm install -g npm@latest && npm install -g ijavascript && ijsinstall --install=global
 
 # Switch back to the default notebook user
 USER $NB_UID
