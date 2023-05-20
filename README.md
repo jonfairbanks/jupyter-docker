@@ -24,5 +24,8 @@ docker run \
   --user root 'jonfairbanks/jupyter-docker' 
 ```
 
+### Enabling GPU Support
+Also pass `--gpus all` when starting the container
+
 ### Resources
 - [Jupyter Docs](https://docs.jupyter.org/en/latest/)
