@@ -1,4 +1,4 @@
-FROM jupyter/tensorflow-notebook:latest
+FROM --platform=$BUILDPLATFORM jupyter/tensorflow-notebook:latest
 
 # Switch to root for installs and updates
 USER root
