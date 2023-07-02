@@ -1,4 +1,5 @@
-FROM --platform=$BUILDPLATFORM jupyter/tensorflow-notebook:latest
+# This needs to be Python 3.10 until jupyter_contrib_nbextensions is updated
+FROM --platform=$BUILDPLATFORM jupyter/tensorflow-notebook:python-3.10
 
 # Switch to root for installs and updates
 USER root
