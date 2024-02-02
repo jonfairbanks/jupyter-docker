@@ -1,6 +1,7 @@
 name: "Docker Release -- MAIN"
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 0 1 * *'  # Run on the 1st day of every month
   push:
